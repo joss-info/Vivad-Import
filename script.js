@@ -1,0 +1,4 @@
+const menu=document.getElementById('menu');menu.classList.add('menu');menu.addEventListener('click',()=>document.querySelector('header').classList.toggle('navopen'));
+const modal=document.getElementById('modal'),mt=document.getElementById('mt'),md=document.getElementById('md'),ml=document.getElementById('ml');
+document.querySelectorAll('.buy').forEach(b=>b.onclick=()=>{let p=b.dataset.p,v=b.dataset.v;mt.textContent=p;md.textContent=`Precio publicado: $${v}. Escríbenos para confirmar disponibilidad, presentación y condiciones de entrega.`;ml.href='https://wa.me/593980701094?text='+encodeURIComponent(`Hola VIVAD IMPORTS, me interesa ${p} de $${v}. Quiero consultar disponibilidad y hacer mi pedido.`);modal.classList.add('open')});
+document.getElementById('close').onclick=()=>modal.classList.remove('open');modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};
